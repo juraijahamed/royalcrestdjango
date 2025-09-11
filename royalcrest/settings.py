@@ -24,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7tek(7@wbh8yd&0)$b04xs(npy=a#3+v3jxea=vn!m$lyji3zf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = false
-ALLOWED_HOSTS = ['royalcrestindia.in', 'www.royalcrestindia.in']  
+DEBUG = true
+ALLOWED_HOSTS = ['#']  
 
 # Application definition
 
