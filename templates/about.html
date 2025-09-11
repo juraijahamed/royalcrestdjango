@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h2>About Us</h2>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">About Us</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about py-5 animate-on-scroll" style="background-color: #fffefc;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 services-about-text">
+                <h2 class="mb-3">Who We Are <span class="text-dark">!</span></h2>
+                <p>
+                    Our mission is to create beautiful, functional, and sustainable spaces that enhance the lives of our
+                    clients.
+                    We believe in transparency, open communication, and a collaborative approach to every project.
+                    Our team of skilled professionals is passionate about building, and we are committed to delivering
+                    excellence in every detail.
+                </p>
+            </div>
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="card shadow-sm border-0">
+                    <img src="{% static 'imgs/about-cover-RC.jpeg' %}" alt="About Image" class="card-img-top rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Philosophy Section -->
+<section class="philosophy py-5 animate-on-scroll" style="background-color: #f7f6f2;">
+    <div class="container">
+        <h3 class="text-center mb-5">Crafting the ecosystems where people will <span class="text-gold">Live</span>,
+            <span class="text-gold">Work</span>, and <span class="text-gold">Connect</span></h3>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <p>
+                    Royal Crest believes in the simplicity and humbleness of design which shapes the project into a
+                    sensible work of art.
+                    We approach design as a process unfolding into a series of ideas, relentlessly nurturing the
+                    project.
+                </p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <p>
+                    Our designs evolve naturally, often surprising with the ultimate outcome from our distinct ideas.
+                    We encourage our clients to dream freely, and transform those dreams into meaningful spaces.
+                </p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <p>
+                    We create designs for new constructions, alterations, and redevelopments.
+                    Using specialist construction knowledge and high-level drawing skills, we design buildings that are
+                    functional, safe, sustainable, and aesthetically pleasing.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="wave-divider">
+    <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#fffefc"
+            d="M0,32L48,48C96,64,192,96,288,112C384,128,480,128,576,112C672,96,768,64,864,48C960,32,1056,32,1152,48C1248,64,1344,96,1392,112L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+        </path>
+    </svg>
+</div>
+
+<!-- Business & Brochure Section -->
+<section class="business-brochure py-5 animate-on-scroll" style="background-color: #fffefc;">
+    <div class="container">
+        <div class="row align-items-center text-center text-md-start">
+            <div class="col-md-8 mb-4 mb-md-0">
+                <h2 class="mb-3">Start Your Project with <span class="text-gold">Royal Crest</span></h2>
+                <p>
+                    Partner with us to bring your dream space to life. Our experienced team ensures that every detail is
+                    meticulously planned,
+                    delivering innovative, functional, and aesthetically stunning results. Let’s collaborate to create
+                    spaces that inspire and endure.
+                </p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <a href="{% static 'docs/RoyalCrest-Brochure.pdf' %}" class="btn btn-outline-warning btn-lg shadow-sm"
+                    download>
+                    📄 Download Brochure
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Office & Map Section -->
+<section class="office-map py-5 animate-on-scroll" style="background-color: #f0eee4;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4 mb-md-0 text-center text-md-start">
+                <h2 class="mb-3">Our <span class="text-gold">Office</span></h2>
+                <p>
+                    LIC Shiva Complex, 190,<br>
+                    Jothipuram PO, Coimbatore, Tamil Nadu<br>
+                    PIN: 641047
+                </p>
+                <div class="about-contact-btn">
+                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                        data-bs-target="#contactModal">
+                        Contact
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="map-responsive rounded shadow-sm overflow-hidden">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d978.5896928188072!2d76.94551537608635!3d11.161049753323008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f1d877d3a227%3A0x23d60e701774795c!2sLIC%20Shiva%20Complex!5e0!3m2!1sen!2sin!4v1755858534864!5m2!1sen!2sin"
+                        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Scroll Animation Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll(".animate-on-scroll");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => observer.observe(section));
+    });
+</script>
+
+{% endblock %}

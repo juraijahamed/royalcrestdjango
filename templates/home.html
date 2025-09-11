@@ -1,0 +1,526 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+
+<!-- Hero Carousel Start -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000"
+    style="margin-top: 70px;">
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <img src="{% static 'imgs/corousel/Construction Site Silhouettes.jpg' %}" class="d-block w-100 hero-img"
+                alt="Construction Site">
+            <div class="carousel-overlay"></div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="{% static 'imgs/corousel/Park in Lujiazui Financial Centre.jpg' %}" class="d-block w-100 hero-img"
+                alt="Park in Lujiazui">
+            <div class="carousel-overlay"></div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="{% static 'imgs/corousel/A Builder Works with a Drill at a Construction Site.jpg' %}"
+                class="d-block w-100 hero-img" alt="Builder at Work">
+            <div class="carousel-overlay"></div>
+        </div>
+
+    </div>
+
+    <!-- Single Global Caption (fixed for all slides) -->
+    <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-center"
+        data-bs-ride="carousel">
+        <h5 class="animate__animated animate__fadeInDown">Welcome To RoyalCrest</h5>
+        <h1 class="fw-bold display-4 animate__animated animate__fadeInUp">
+            We Build <span class="changecontent"></span>
+        </h1>
+        <p class="lead mt-3 animate__animated animate__fadeInUp"
+            style="font-weight: 600; font-size: 1.3rem; color: #d59f4f;">
+            Building Trust, Building Future
+        </p>
+        <p class="mt-2 px-3 animate__animated animate__fadeInUp"
+            style="max-width: 800px; font-size: 1.05rem; color: #f0f0f0;">
+            From iconic skylines to sustainable communities, we deliver excellence in every brick laid and every design
+            envisioned.
+            Our expertise empowers developers and builders to transform ideas into enduring landmarks of progress.
+        </p>
+    </div>
+
+    <!-- Controls -->
+    <div class="d-none">
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+</div>
+<!-- Hero Carousel End -->
+
+
+<section class="services-section py-5" style="background-color: #fdf8f0;">
+    <div class="container">
+
+        <!-- Section Heading -->
+        <h1 class="fw-bold text-center"><span style="color:#d59f4f;">Our</span> Core <span
+                style="color:#d59f4f;">Services</span></h1>
+        <div class="section-divider mx-auto mb-5" style="width: 80px; height: 3px; background: #d59f4f;"></div>
+
+        <div class="row g-4 text-center">
+
+            <!-- Residential -->
+            <div class="col-md-6 col-lg-3 animate-on-scroll">
+                <div class="card service-card h-100 p-4 border-0 rounded-3 shadow-sm">
+                    <div class="card service-card-lg text-center mb-3 p-4 h-100">
+                        <i class="bi bi-house-door display-5 service-icon"></i>
+                    </div>
+                    <h5 class="fw-bold text-gold">Residential Construction</h5>
+                    <p class="text-muted">
+                        Modern homes built with precision, comfort, and sustainability in mind.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Commercial -->
+            <div class="col-md-6 col-lg-3 animate-on-scroll">
+                <div class="card service-card h-100 p-4 border-0 rounded-3 shadow-sm">
+                    <div class="card service-card-lg text-center mb-3 p-4 h-100">
+                        <i class="bi bi-buildings service-icon display-5"></i>
+                    </div>
+                    <h5 class="fw-bold text-gold">Commercial Construction</h5>
+                    <p class="text-muted">
+                        Transforming business spaces with innovative and scalable solutions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Infrastructure -->
+            <div class="col-md-6 col-lg-3 animate-on-scroll">
+                <div class="card service-card h-100 p-4 border-0 rounded-3 shadow-sm">
+                    <div class="card service-card-lg text-center mb-3 p-4 h-100">
+                        <i class="bi bi-globe2 display-5 service-icon"></i>
+                    </div>
+                    <h5 class="fw-bold text-gold">Infrastructure Development</h5>
+                    <p class="text-muted">
+                        Building reliable infrastructure that drives growth and connectivity.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Renovation -->
+            <div class="col-md-6 col-lg-3 animate-on-scroll">
+                <div class="card service-card h-100 p-4 border-0 rounded-3 shadow-sm">
+                    <div class="card service-card-lg text-center mb-3 p-4 h-100">
+                        <i class="bi bi-bricks display-5 service-icon"></i>
+                    </div>
+                    <h5 class="fw-bold text-gold">Renovation & Remodeling</h5>
+                    <p class="text-muted">
+                        Breathing new life into old spaces with quality and craftsmanship.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Dream Section -->
+<section class="dream-section py-5" style="background-color: #fdf8f0;">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- Text Content -->
+            <div class="col-md-6 order-2 order-md-1 text-center text-md-start mb-4 mb-md-0">
+                <h1 class="dream-title">Bring Your <span class="text-gold">Vision</span> to Life</h1>
+                <p class="dream-text">
+                    At Royal Crest, we transform concepts into concrete realities. Whether it’s a residential haven, a
+                    commercial hub, or a large-scale infrastructure project, our team of experts ensures every detail
+                    reflects your ambition and style. Collaborate with us to craft spaces that inspire, perform, and
+                    endure.
+                </p>
+                <a href="#about" class="btn btn-outline-warning dream-btn">Discover More</a>
+            </div>
+
+            <!-- Image Content -->
+            <div class="col-md-6 order-1 order-md-2 text-center">
+                <img src="{% static 'imgs/IMG_4018.JPG' %}" alt="Dream Project"
+                    class="dream-img rounded-3 animate-on-scroll">
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Services Section -->
+<section class="services-section p-5" id="Services" style="background-color: #fdf8f0;">
+    <div class="container">
+
+        <!-- Section Heading with Tagline -->
+        <div class="main-txt mb-4">
+            <h1 class="fw-bold"><span style="color:#d59f4f;">What</span> We <span style="color:#d59f4f;">Do !</span>
+            </h1>
+            <p class="text-muted mt-2" style="font-size:1.1rem;">
+                Delivering excellence in every construction project — from innovative designs to flawless execution.
+                Explore the wide range of services we offer to make your dream space a reality.
+            </p>
+        </div>
+
+        <!-- Services Cards -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-center">
+
+            <!-- Example Service Card -->
+            <div class="col animate-on-scroll">
+                <div class="card service-card-1 bg-dark text-light">
+                    <img src="{% static 'imgs/servicesection/interior.jpg' %}" class="card-img-top" height="150"
+                        alt="Interior Design">
+                    <div class="card-img-overlay text-center"
+                        style="background-color: rgba(0,0,0,0.5); padding-top:30px;">
+                        <h2 class="card-title"><span class="text-warning">|</span>Interior Design</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col animate-on-scroll">
+                <div class="card service-card-1 bg-dark text-light">
+                    <img src="{% static 'imgs/servicesection/architecture-design-card.jpg' %}" class="card-img-top"
+                        height="150" alt="Architecture Design">
+                    <div class="card-img-overlay text-center"
+                        style="background-color: rgba(0,0,0,0.5); padding-top:30px;">
+                        <h2 class="card-title"><span class="text-warning">|</span>Architecture Design</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col animate-on-scroll">
+                <div class="card service-card-1 bg-dark text-light">
+                    <img src="{% static 'imgs/servicesection/exterior.jpg' %}" class="card-img-top" height="150"
+                        alt="Exterior Design">
+                    <div class="card-img-overlay text-center"
+                        style="background-color: rgba(0,0,0,0.5); padding-top:30px;">
+                        <h2 class="card-title"><span class="text-warning">|</span>Exterior Design</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col animate-on-scroll">
+                <div class="card service-card-1 bg-dark text-light">
+                    <img src="{% static 'imgs/servicesection/premiumquality.jpg' %}" class="card-img-top" height="150"
+                        alt="Premium Quality">
+                    <div class="card-img-overlay text-center"
+                        style="background-color: rgba(0,0,0,0.5); padding-top:30px;">
+                        <h2 class="card-title"><span class="text-warning">|</span>Premium Quality</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col animate-on-scroll">
+                <div class="card service-card-1 bg-dark text-light">
+                    <img src="{% static 'imgs/servicesection/engineer-consult.jpeg' %}" class="card-img-top"
+                        height="150" alt="Premium Quality">
+                    <div class="card-img-overlay text-center"
+                        style="background-color: rgba(0,0,0,0.5); padding-top:30px;">
+                        <h2 class="card-title"><span class="text-warning">|</span>Engineer Consultation</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col animate-on-scroll">
+                <div class="card service-card-1 bg-dark text-light">
+                    <img src="{% static 'imgs/servicesection/hometheatre.jpeg' %}" class="card-img-top" height="150"
+                        alt="Premium Quality">
+                    <div class="card-img-overlay text-center"
+                        style="background-color: rgba(0,0,0,0.5); padding-top:30px;">
+                        <h2 class="card-title"><span class="text-warning">|</span>Home Theatre Installing</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col animate-on-scroll">
+                <div class="card service-card-1 bg-dark text-light">
+                    <img src="{% static 'imgs/servicesection/modern-design.jpeg' %}" class="card-img-top" height="150"
+                        alt="Premium Quality">
+                    <div class="card-img-overlay text-center"
+                        style="background-color: rgba(0,0,0,0.5); padding-top:30px;">
+                        <h2 class="card-title"><span class="text-warning">|</span>Modern Designs</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col animate-on-scroll">
+                <div class="card service-card-1 bg-dark text-light">
+                    <img src="{% static 'imgs/servicesection/impact.jpg' %}" class="card-img-top" height="150"
+                        alt="Premium Quality">
+                    <div class="card-img-overlay text-center"
+                        style="background-color: rgba(0,0,0,0.5); padding-top:30px;">
+                        <h2 class="card-title"><span class="text-warning">|</span>Impactful Work</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col animate-on-scroll">
+                <div class="card service-card-1 bg-dark text-light">
+                    <img src="{% static 'imgs/servicesection/turnkey-house.jpg' %}" class="card-img-top" height="150"
+                        alt="Premium Quality">
+                    <div class="card-img-overlay text-center"
+                        style="background-color: rgba(0,0,0,0.5); padding-top:30px;">
+                        <h2 class="card-title"><span class="text-warning">|</span>Turnkey Construction</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col animate-on-scroll">
+                <div class="card service-card-1 bg-dark text-light">
+                    <img src="{% static 'imgs/servicesection/landscape-design.jpg' %}" class="card-img-top" height="150"
+                        alt="Premium Quality">
+                    <div class="card-img-overlay text-center"
+                        style="background-color: rgba(0,0,0,0.5); padding-top:30px;">
+                        <h2 class="card-title"><span class="text-warning">|</span>Landscape Designs</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col animate-on-scroll">
+                <div class="card service-card-1 bg-dark text-light">
+                    <img src="{% static 'imgs/servicesection/building-construction-premiumquality.jpg' %}"
+                        class="card-img-top" height="150" alt="Premium Quality">
+                    <div class="card-img-overlay text-center"
+                        style="background-color: rgba(0,0,0,0.5); padding-top:30px;">
+                        <h2 class="card-title"><span class="text-warning">|</span>Construction Monitoring</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col animate-on-scroll">
+                <div class="card service-card-1 bg-dark text-light">
+                    <img src="{% static 'imgs/servicesection/planning.jpg' %}" class="card-img-top" height="150"
+                        alt="Premium Quality">
+                    <div class="card-img-overlay text-center"
+                        style="background-color: rgba(0,0,0,0.5); padding-top:30px;">
+                        <h2 class="card-title"><span class="text-warning">|</span>Planning</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Gallery Section -->
+<section class="gallery-preview py-5" style="background-color: #fdf8f0;">
+    <div class="container">
+        <!-- Section Heading -->
+        <div class="text-center mb-5">
+            <h2 class="fw-bold" style="color:#333;">
+                <span style="color:#d59f4f;">R</span>ecent Projects
+            </h2>
+            <p class="text-muted" style="max-width:700px; margin:auto;">
+                Take a glimpse at some of our recently completed projects. From residential homes to commercial
+                complexes,
+                we bring every design to life with precision, quality, and innovation.
+                Discover why clients trust us with their vision.
+            </p>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="row g-3">
+            <!-- Project Item -->
+            <div class="col-md-4 animate-on-scroll">
+                <div class="card border-0 shadow-sm rounded-3 overflow-hidden gallery-item">
+                    <img src="{% static 'imgs/IMG_4231.JPG' %}" class="card-img-top" height="230" alt="Project">
+                    <div class="overlay">
+                        <h5 class="text-white fw-bold">Residential Villa</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 animate-on-scroll">
+                <div class="card border-0 shadow-sm rounded-3 overflow-hidden gallery-item">
+                    <img src="{% static 'imgs/IMG_4241.JPG' %}" class="card-img-top" height="230" alt="Project">
+                    <div class="overlay">
+                        <h5 class="text-white fw-bold">Commercial Complex</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 animate-on-scroll">
+                <div class="card border-0 shadow-sm rounded-3 overflow-hidden gallery-item">
+                    <img src="{% static 'imgs/IMG_4243.JPG' %}" class="card-img-top" height="230" alt="Project">
+                    <div class="overlay">
+                        <h5 class="text-white fw-bold">Luxury Interiors</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Row -->
+            <div class="col-md-4 animate-on-scroll">
+                <div class="card border-0 shadow-sm rounded-3 overflow-hidden gallery-item">
+                    <img src="{% static 'imgs/IMG_4250.JPG' %}" class="card-img-top" height="230" alt="Project">
+                    <div class="overlay">
+                        <h5 class="text-white fw-bold">Modern Infrastructure</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 animate-on-scroll">
+                <div class="card border-0 shadow-sm rounded-3 overflow-hidden gallery-item">
+                    <img src="{% static 'imgs/IMG_4251.JPG' %}" class="card-img-top" height="230" alt="Project">
+                    <div class="overlay">
+                        <h5 class="text-white fw-bold">Renovation Project</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 animate-on-scroll">
+                <div class="card border-0 shadow-sm rounded-3 overflow-hidden gallery-item">
+                    <img src="{% static 'imgs/IMG_4252.JPG' %}" class="card-img-top" height="230" alt="Project">
+                    <div class="overlay">
+                        <h5 class="text-white fw-bold">Office Spaces</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View More Button -->
+        <div class="text-center mt-4">
+            <a href="{% url 'gallery' %}">
+                <button class="btn btn-warning px-4 py-2 fw-bold shadow-sm" style="border-radius: 30px;">
+                    Explore Full Gallery
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- About Section -->
+<section class="about" id="about" style="background-color: #fdf8f0;">
+    <div class="container">
+        <div class="maint-txt mb-4">
+            <h1>About <span>Us</span></h1>
+        </div>
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6 animate-on-scroll">
+                <div class="card">
+                    <img src="{% static 'imgs/about-business-team.jpg' %}" class="card-img-top" alt="About Us">
+                </div>
+            </div>
+            <div class="col-md-6 animate-on-scroll">
+                <h2>
+                    Building <span style="color: rgb(213,159,79);">Dreams</span>, Crafting Spaces
+                </h2>
+                <p>
+                    At <strong>RoyalCrest</strong>, we transform visions into reality. From residential and commercial
+                    projects
+                    to interiors, exteriors, and renovations, our expertise ensures every space is <span
+                        style="font-weight:600;">functional, beautiful, and built to last</span>.
+                    Join over 50 satisfied clients who have trusted us to create their perfect environment.
+                </p>
+                <a href="{% url 'about' %}">
+                    <button class="btn btn-outline-warning btn-lg shadow-sm">
+                        Discover Our Story
+                    </button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    const words = [
+        "Apartment", "Single-Family(Detached)", "Co-Operative", "Colonial", "Tiny Homes", "Contemporary", "NaaluKettu", "Ordinary Homes", "Resorts", "Hut", "Commercial Buildings"
+    ];
+    const changeSpan = document.querySelector(".changecontent");
+    let i = 0;
+
+    function changeWord() {
+        // Fade out
+        changeSpan.classList.remove("show");
+
+        setTimeout(() => {
+            // Change text
+            changeSpan.textContent = words[i];
+            // Fade in
+            changeSpan.classList.add("show");
+            // Next word
+            i = (i + 1) % words.length;
+        }, 500); // match half of the CSS transition time
+    }
+
+    // Initial display
+    changeWord();
+
+    // Change word every 2.5 seconds
+    setInterval(changeWord, 2000);
+</script>
+<script>
+    // Animate elements when they enter the viewport
+    const scrollElements = document.querySelectorAll('.animate-on-scroll');
+
+    const elementInView = (el, offset = 0) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+    };
+
+    const displayScrollElement = (el) => {
+        el.classList.add('show');
+    };
+
+    const handleScrollAnimation = () => {
+        scrollElements.forEach(el => {
+            if (elementInView(el, 50)) {
+                displayScrollElement(el);
+            }
+        });
+    };
+
+    window.addEventListener('scroll', handleScrollAnimation);
+    window.addEventListener('load', handleScrollAnimation);
+</script>
+<script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+</script>
+<script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
+
+
+{% endblock %}

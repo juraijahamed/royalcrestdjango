@@ -1,0 +1,241 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <h2>Our Services</h2>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Services</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+
+<section class="services-intro">
+  <div class="container">
+    <h1 class="intro-title">Building Dreams, Creating Value</h1>
+    <p class="intro-text">
+      At <strong>RoyalCrest</strong>, we provide a complete range of construction services tailored to meet the needs of homeowners, businesses, and developers. 
+      From residential projects to large-scale commercial developments, we deliver quality, reliability, and innovation in every project we undertake.
+    </p>
+  </div>
+</section>
+
+<section class="services-about light-theme fade-in-section">
+  <div class="container services-about-grid">
+    
+    <!-- Image -->
+    <div class="services-about-image">
+      <img src="{% static 'imgs/service about.jpeg' %}" alt="Construction Services">
+    </div>
+
+    <!-- Text -->
+    <div class="services-about-text">
+      <h2>Delivering Quality, Every Step</h2>
+      <div class="section-divider"></div>
+      <p class="services-tagline">
+        From concept to completion, we create spaces that inspire.
+      </p>
+      <p>
+        We take pride in delivering a wide range of 
+        construction solutions tailored to meet the unique needs of every client. 
+        From residential and commercial projects to industrial developments, 
+        our team ensures quality, precision, and safety at every stage. 
+        We combine modern technology with years of experience to execute 
+        projects that not only meet but exceed expectations. 
+        Whether it’s planning, designing, or actual construction, 
+        we are committed to turning visions into durable and sustainable realities. 
+        Our goal is to create structures that stand the test of time while 
+        maintaining cost-efficiency and aesthetic appeal.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- Services Section -->
+<section class="services-page py-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col text-center">
+        <h2 class="fw-bold text-light">Our <span style="color: #d4a017;">Services</span></h2>
+        <p class="text-muted">Comprehensive construction solutions tailored to your needs</p>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- Service 1 -->
+      <div class="col-md-6 col-lg-4 mb-4 service-box" data-aos="fade-up" data-aos-delay="100">
+        <div class="card service-card-lg text-center p-4 h-100 ">
+          <i class="fas fa-house-chimney fa-3x mb-3 service-icon"></i>
+          <h5 class="fw-bold mb-2">Residential Construction</h5>
+          <p>High-quality homes built with modern design, safety, and durability in mind.</p>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="col-md-6 col-lg-4 mb-4 service-box" data-aos="fade-up" data-aos-delay="200">
+        <div class="card service-card-lg text-center p-4 h-100">
+          <i class="fas fa-city fa-3x mb-3 service-icon"></i>
+          <h5 class="fw-bold mb-2">Commercial Projects</h5>
+          <p>From offices to retail spaces, we deliver functional and stylish buildings.</p>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="col-md-6 col-lg-4 mb-4 service-box" data-aos="fade-up" data-aos-delay="300">
+        <div class="card service-card-lg text-center p-4 h-100">
+          <i class="fas fa-drafting-compass fa-3x mb-3 service-icon"></i>
+          <h5 class="fw-bold mb-2">Architectural Design</h5>
+          <p>Innovative and sustainable design solutions to bring your vision to life.</p>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="col-md-6 col-lg-4 mb-4 service-box" data-aos="fade-up" data-aos-delay="400">
+        <div class="card service-card-lg text-center p-4 h-100">
+          <i class="fas fa-tools fa-3x mb-3 service-icon"></i>
+          <h5 class="fw-bold mb-2">Renovation & Remodeling</h5>
+          <p>Transforming existing spaces with modern upgrades and efficient designs.</p>
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="col-md-6 col-lg-4 mb-4 service-box" data-aos="fade-up" data-aos-delay="500">
+        <div class="card service-card-lg text-center p-4 h-100">
+          <i class="fas fa-hard-hat fa-3x mb-3 service-icon"></i>
+          <h5 class="fw-bold mb-2">Project Management</h5>
+          <p>Expert planning and supervision to ensure projects are completed on time.</p>
+        </div>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="col-md-6 col-lg-4 mb-4 service-box" data-aos="fade-up" data-aos-delay="600">
+        <div class="card service-card-lg text-center p-4 h-100">
+          <i class="fas fa-solar-panel fa-3x mb-3 service-icon"></i>
+          <h5 class="fw-bold mb-2">Sustainable Solutions</h5>
+          <p>Eco-friendly construction practices with energy-efficient materials.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process-section fade-in-section animate-on-scroll">
+  <div class="container">
+
+    <!-- Section Heading -->
+    <h2>Our Construction Journey</h2>
+    <div class="section-divider" style="background: #d4a017; width: 80px; height: 3px; margin: 10px 0 25px;"></div>
+    <p class="process-tagline">
+      From initial consultation to final inspection, every stage matters.
+    </p>
+
+    <!-- Timeline Steps -->
+    <div class="process-steps">
+      <div class="process-step align-items-stretch animate-on-scroll">
+        <div class="step-circle">1</div>
+        <div class="step-icon"><i class="fas fa-comments"></i></div>
+        <h3>Consultation</h3>
+        <p>We start by understanding your vision, requirements, and budget.</p>
+      </div>
+      <div class="process-step animate-on-scroll align-items-stretch">
+        <div class="step-circle">2</div>
+        <div class="step-icon"><i class="fas fa-pencil-ruler"></i></div>
+        <h3>Planning & Design</h3>
+        <p>Our architects and engineers prepare detailed designs and plans.</p>
+      </div>
+      <div class="process-step animate-on-scroll">
+        <div class="step-circle">3</div>
+        <div class="step-icon"><i class="fas fa-hard-hat"></i></div>
+        <h3>Construction</h3>
+        <p>From foundation to finishing, our skilled team ensures quality execution.</p>
+      </div>
+      <div class="process-step animate-on-scroll">
+        <div class="step-circle">4</div>
+        <div class="step-icon"><i class="fas fa-clipboard-check"></i></div>
+        <h3>Inspection & Handover</h3>
+        <p>We conduct thorough inspections before handing over the completed project.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section text-center py-5 bg-dark text-white" data-aos="fade-up">
+  <div class="container">
+    <h2 class="fw-bold mb-3">Ready to Build Your Dream Project?</h2>
+    <p class="mb-4">Contact us today to discuss your construction needs. Our team of experts is here to help every step of the way.</p>
+    <a data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-warning btn-lg">Get in Touch</a>
+  </div>
+</section>
+
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,   // animation speed
+    once: true       // only animate once per element
+  });
+</script>
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target); // run once per element
+      }
+    });
+  }, { threshold: 0.2 });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll(".fade-in-section, .services-about, .process-section");
+  const steps = document.querySelectorAll(".process-step");
+
+  function checkVisibility() {
+    // Animate sections like About / Process container
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        section.classList.add("visible");
+      }
+    });
+
+    // Animate timeline steps with stagger
+    steps.forEach((step, index) => {
+      const rect = step.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 80) {
+        setTimeout(() => {
+          step.classList.add("visible");
+        }, index * 250); // 250ms delay
+      }
+    });
+  }
+
+  window.addEventListener("scroll", checkVisibility);
+  checkVisibility(); // run on load
+});
+</script>
+
+{% endblock %}

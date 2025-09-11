@@ -1,0 +1,274 @@
+/* ====== Page Header ====== */
+.page-header {
+  margin-top: 60px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  background: #111;
+  color: #fff;
+}
+
+.page-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.page-header nav {
+  font-size: 0.95rem;
+}
+
+.page-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-header .breadcrumb {
+  background: transparent;
+}
+
+.page-header .breadcrumb-item+.breadcrumb-item::before {
+  color: #bbb;
+}
+
+/* ========== Intro ========== */
+.gallery-heading {
+  font-weight: 700;
+  font-family: 'Trebuchet MS', sans-serif;
+  margin-bottom: 0.75rem;
+}
+
+.gallery-heading .highlight {
+  color: rgb(213, 159, 79);
+}
+
+.gallery-subtext {
+  max-width: 750px;
+  margin: 0 auto;
+  font-style: italic;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #555;
+}
+
+/* ========== Gallery Grid ========== */
+.gallery-section {
+  padding: 30px 0 60px;
+}
+
+.gallery-section .container {
+  max-width: 1200px;
+  padding: 0 1rem;
+  /* keeps cards off edges */
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.gallery-item {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  /* uniform card height */
+  object-fit: cover;
+  /* crop proportionally */
+  display: block;
+}
+
+.gallery-item .caption {
+  padding: 10px 12px;
+  font-weight: 600;
+  color: #333;
+  background: #f8f8f8;
+}
+
+/* ========== Scroll-in animations (no external libs) ========== */
+/* Safe default: visible if JS doesn't run */
+.scroll-fade {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* JS-enabled: start hidden and lift in */
+.js-enabled .scroll-fade {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.js-enabled .scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== Modal (responsive, centered, dark overlay) ========== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background: rgba(0, 0, 0, 0.9);
+  /* black with opacity */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-inner {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 78vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+}
+
+.modal-caption {
+  margin-top: 10px;
+  color: #f1f1f1;
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+/* Close & Nav buttons */
+.close {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+  color: #fff;
+  font-size: 38px;
+  line-height: 1;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.close:hover {
+  color: #ddd;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+  padding: 10px 14px;
+  line-height: 1;
+  border-radius: 8px;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.prev {
+  left: 16px;
+}
+
+.next {
+  right: 16px;
+}
+
+/* ========== Responsive tweaks ========== */
+@media (max-width: 768px) {
+  .page-header {
+    height: 150px;
+  }
+
+  .gallery-item img {
+    height: 190px;
+  }
+
+  .modal-image {
+    max-height: 65vh;
+  }
+}
+
+
+/* Wrap image + overlay */
+.gallery-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay indicator */
+.view-more {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  /* ensures clicks still go to the card/image */
+}
+
+/* Reveal on hover */
+.gallery-thumb:hover .view-more {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Caption styling */
+.caption {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.caption h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.gallery-item:hover .caption h5 {
+  color: #d59f4f;
+  /* highlight color on hover */
+}

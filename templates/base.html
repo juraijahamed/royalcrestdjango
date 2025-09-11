@@ -1,0 +1,183 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoyalCrest</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'imgs/logo/logoIco.png' %}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}?v=20">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #fff;">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}" id="logo">
+                Royal<span class="text-gold">Crest</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span><i class="fa-solid fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto ms-auto nav-underline">
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_page == 'home' %}active{% endif %}"
+                            href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_page == 'services' %}active{% endif %}"
+                            href="{% url 'services' %}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_page ==  true %}active{% endif %}"
+                            href="{% url 'gallery' %}">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_page == 'about' %}active{% endif %}"
+                            href="{% url 'about' %}">About</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                        data-bs-target="#contactModal">
+                        Contact
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 shadow-lg border-0 animate__animated animate__fadeInDown"
+                style="background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(245,245,245,0.95)); backdrop-filter: blur(10px);">
+
+                <!-- Modal Header with Brand Icon -->
+                <div class="modal-header bg-dark text-light rounded-top-4 d-flex align-items-center">
+                    <i class="fa-solid fa-building fa-lg me-2" style="color: rgb(213,159,79);"></i>
+                    <h5 class="modal-title mb-0" id="contactModalLabel">Get in Touch</h5>
+                    <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body p-4">
+                    <p class="mb-4 text-muted">
+                        Connect with us to discuss your next project. Our team ensures your ideas turn into reality with
+                        precision, style, and innovation.
+                    </p>
+
+                    <!-- Contact Items -->
+                    <div class="d-flex align-items-center mb-3 p-3 rounded-3 shadow-sm contact-item hover-effect">
+                        <i class="fa-solid fa-phone-volume me-3" style="color: rgb(213,159,79); font-size:1.3rem;"></i>
+                        <a href="tel:+917339236528" class="text-decoration-none text-dark fw-medium">+91 7339236528</a>
+                    </div>
+                    <div class="d-flex align-items-center mb-3 p-3 rounded-3 shadow-sm contact-item hover-effect">
+                        <i class="fa-solid fa-phone-volume me-3" style="color: rgb(213,159,79); font-size:1.3rem;"></i>
+                        <a href="tel:+917339086528" class="text-decoration-none text-dark fw-medium">+91 7339086528</a>
+                    </div>
+
+                    <div class="d-flex align-items-center p-3 rounded-3 shadow-sm contact-item hover-effect">
+                        <i class="fa-solid fa-envelope me-3" style="color: rgb(213,159,79); font-size:1.3rem;"></i>
+                        <a href="mailto:royalcrestcbe@gmail.com"
+                            class="text-decoration-none text-dark fw-medium">royalcrestcbe@gmail.com</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Modal End -->
+
+
+
+    <!-- Main Content -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer Start -->
+    <footer id="footer" class="text-center py-5" style="background-color: #f3f3f3;">
+        <img src="{% static 'imgs/Logo_Img.png' %}" alt="Royal Crest Logo" height="150">
+        <h2>Royal <span class="text-gold">Crest</span></h2>
+        <p>Builders and Developers</p>
+        <div class="social-links mb-3">
+            <a href="https://wa.me/917339236528" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/share/16yv5KfTgb/?mibextid=wwXIfr" target="_blank"><i
+                    class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/royalcrest_builders?igsh=aWFibjM4a3ZsYXYx" target="_blank"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a><i class="fa-brands fa-twitter"></i></a>
+            <a><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <p class="mb-0">&copy; copyright AJ coders. All Rights Reserved</p>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <script>
+        // Select all links with hashes
+        const links = document.querySelectorAll('a.nav-link[href^="#"]');
+
+        links.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 70; // adjust for navbar height
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const targetRect = target.getBoundingClientRect().top;
+                    const targetPosition = targetRect - bodyRect - offset;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
