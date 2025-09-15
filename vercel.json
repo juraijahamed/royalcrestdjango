@@ -5,12 +5,16 @@
       "memory": 512
     }
   },
-  "ignore": [
-    "venv/",
-    "node_modules/",
-    ".git/",
-    "__pycache__/",
-    "media/",
-    "staticfiles/"
+  "builds": [
+    {
+      "src": "api/**/*.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.py"
+    }
   ]
 }
