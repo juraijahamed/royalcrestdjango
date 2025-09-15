@@ -24,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7tek(7@wbh8yd&0)$b04xs(npy=a#3+v3jxea=vn!m$lyji3zf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['royalcrestdjango.onrender.com', 'https://royalcrestdjango.onrender.com', '127.0.0.1', 'localhost', 'royalcrest.pythonanywhere.com', 'https://royalcrest.pythonanywhere.com', 'https://royalcrestindia.in', 'royalcrestindia.in', '.vercel.app', 'royalcrest.vercel.app']
+DEBUG = True
+ALLOWED_HOSTS = ['*']
   
 
 # Application definition
