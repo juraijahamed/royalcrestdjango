@@ -189,8 +189,8 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({
-    duration: 800,   // animation speed
-    once: true       // only animate once per element
+    duration: 800,   
+    once: true       
   });
 </script>
 <script>
@@ -200,7 +200,7 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("active");
-        observer.unobserve(entry.target); // run once per element
+        observer.unobserve(entry.target); 
       }
     });
   }, { threshold: 0.2 });

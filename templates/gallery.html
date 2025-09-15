@@ -3,10 +3,7 @@
 
 
 {% block content %}
-
-<!-- Only a CSS link (no <head>/<body> tags inside blocks) -->
 <link rel="stylesheet" href="{% static 'gallery/style.css' %}?v=4">
-
 <!-- Page Header -->
 <section class="page-header">
     <div class="container">
@@ -19,7 +16,6 @@
         </nav>
     </div>
 </section>
-
 <!-- Professional Intro -->
 <section class="gallery-intro container text-center my-5">
     <h1 class="gallery-heading">
@@ -31,7 +27,6 @@
         Explore and imagine what we can build together.
     </p>
 </section>
-
 <!-- Gallery Grid -->
 <section class="gallery-section">
     <div class="container">
@@ -52,8 +47,7 @@
         </div>
     </div>
 </section>
-
-<!-- Modal (responsive, centered, dark overlay) -->
+<!-- Modal -->
 <div id="galleryModal" class="modal" aria-hidden="true" role="dialog" aria-label="Image preview">
     <button class="close" type="button" aria-label="Close">&times;</button>
     <button class="nav-btn prev" type="button" aria-label="Previous">&#10094;</button>
@@ -64,12 +58,9 @@
     <button class="nav-btn next" type="button" aria-label="Next">&#10095;</button>
 </div>
 
-<!-- Scripts: scroll effects + modal (no external deps) -->
 <script>
-    // Enable JS-based animations only when JS is loaded
-    document.body.classList.add('js-enabled');
 
-    // Scroll-in effect (IntersectionObserver with safe fallback)
+    document.body.classList.add('js-enabled');
     (function () {
         const cards = document.querySelectorAll('.scroll-fade');
 
@@ -87,7 +78,6 @@
 
             cards.forEach(c => io.observe(c));
         } else {
-            // Fallback: show all
             cards.forEach(reveal);
         }
     })();

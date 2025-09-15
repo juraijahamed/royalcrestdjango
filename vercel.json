@@ -1,13 +1,16 @@
 {
-    "builds": [{
-        "src": "royalcrest/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.13"}
-    }],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "royalcrest/wsgi.py"
-        }
-    ]
+  "functions": {
+    "api/**/*.py": {
+      "maxDuration": 10,
+      "memory": 512
+    }
+  },
+  "ignore": [
+    "venv/",
+    "node_modules/",
+    ".git/",
+    "__pycache__/",
+    "media/",
+    "staticfiles/"
+  ]
 }

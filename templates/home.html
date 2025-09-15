@@ -457,27 +457,23 @@
     let i = 0;
 
     function changeWord() {
-        // Fade out
+
         changeSpan.classList.remove("show");
 
         setTimeout(() => {
-            // Change text
+ 
             changeSpan.textContent = words[i];
-            // Fade in
+   
             changeSpan.classList.add("show");
-            // Next word
+
             i = (i + 1) % words.length;
-        }, 500); // match half of the CSS transition time
+        }, 500); 
     }
-
-    // Initial display
     changeWord();
-
-    // Change word every 2.5 seconds
     setInterval(changeWord, 2000);
 </script>
 <script>
-    // Animate elements when they enter the viewport
+
     const scrollElements = document.querySelectorAll('.animate-on-scroll');
 
     const elementInView = (el, offset = 0) => {
