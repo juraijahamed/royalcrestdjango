@@ -1,12 +1,11 @@
 # Ignore Python caches
 __pycache__/
 *.pyc
-# Ignore virtual environment
-venv/
-env/
 # Ignore Django build folders
 staticfiles/
 media/
 # Ignore Git and Node
 .git/
 node_modules/
+# Logs
+*.log
