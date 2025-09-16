@@ -12,16 +12,17 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import logging
+import dj_database_url
 
 
 # Load environment variables
-# load_dotenv()
-# BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -103,11 +104,9 @@ DATABASES = {
     }
 }
 
-# Cloudinary Storage
-cloudinary.config(
-    secure=True
-)
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+MEDIA_URL = '/media/' 
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -163,3 +162,16 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s"
 )
+
+
+# Cloudinary Storage
+cloudinary.config(
+    secure=True
+)
+
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+CLOUDINARY_URL = os.getenv('CLOUDINARY_URL')
+
+if not CLOUDINARY_URL:
+    raise ValueError("CLOUDINARY_URL environment variable is missing")
