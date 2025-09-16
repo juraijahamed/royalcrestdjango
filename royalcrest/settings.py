@@ -12,11 +12,16 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+import logging
+
 
 # Load environment variables
-# load_dotenv()
-# BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -99,6 +104,9 @@ DATABASES = {
 }
 
 # Cloudinary Storage
+cloudinary.config(
+    secure=True
+)
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Password validation
@@ -143,8 +151,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # WhiteNoise for static file handling
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+MEDIA_URL = "/media/"  # URL prefix, Django admin will use it
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")  # Local fallback for dev
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
