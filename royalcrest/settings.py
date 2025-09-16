@@ -151,8 +151,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # WhiteNoise for static file handling
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-MEDIA_URL = "/media/"  # URL prefix, Django admin will use it
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")  # Local fallback for dev
 
 
 # Default primary key field type
