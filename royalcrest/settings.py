@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -20,13 +20,13 @@ import logging
 import dj_database_url
 
 
+# from dotenv import load_dotenv
+
+# Base directory
+# BASE_DIR = Path(__file__).resolve().parent.parent
+
 # Load environment variables
-load_dotenv()
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,7 +37,7 @@ SECRET_KEY = 'django-insecure-7tek(7@wbh8yd&0)$b04xs(npy=a#3+v3jxea=vn!m$lyji3zf
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['.vercel.app', 'royalcrestdjango.vercel.app', 'www.royalcrestindia.in', 'royalcrestindia.in', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app', 'royalcrestdjango.vercel.app', 'www.royalcrestindia.in', 'royalcrestindia.in', 'localhost', '127.0.0.1', '*']
   
 
 # Application definition
@@ -164,14 +164,15 @@ logging.basicConfig(
 )
 
 
-# Cloudinary Storage
-cloudinary.config(
-    secure=True
-)
-
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-CLOUDINARY_URL = os.getenv('CLOUDINARY_URL')
+# Cloudinary Storage Configuration
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
 if not CLOUDINARY_URL:
     raise ValueError("CLOUDINARY_URL environment variable is missing")
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+cloudinary.config(
+    cloudinary_url=CLOUDINARY_URL,
+    secure=True
+)
