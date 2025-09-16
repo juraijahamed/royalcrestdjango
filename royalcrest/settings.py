@@ -20,13 +20,13 @@ import logging
 # import dj_database_url
 
 
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 # Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load environment variables
-# load_dotenv(os.path.join(BASE_DIR, ".env"))
+load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 
 # Quick-start development settings - unsuitable for production
@@ -165,7 +165,8 @@ logging.basicConfig(
 
 
 # Cloudinary Storage Configuration
-CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
+# CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
+CLOUDINARY_URL = "cloudinary://153273315114748:TIIJe9aMiTW8jJa6o-FVYsYP6H8@de4vpnkpf"
 
 if not CLOUDINARY_URL:
     raise ValueError("CLOUDINARY_URL environment variable is missing")
