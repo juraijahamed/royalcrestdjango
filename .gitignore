@@ -1,1 +1,6 @@
 .vercel
+.env
+# Django stuff
+__pycache__/
+*.pyc
+db.sqlite3
