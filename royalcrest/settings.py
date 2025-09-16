@@ -17,13 +17,13 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import logging
-import dj_database_url
+# import dj_database_url
 
 
 # from dotenv import load_dotenv
 
 # Base directory
-# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load environment variables
 # load_dotenv(os.path.join(BASE_DIR, ".env"))
