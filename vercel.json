@@ -1,14 +1,28 @@
 {
-  "functions": {
-    "api/index.py": {
-      "maxDuration": 10,
-      "memory": 512
+  "version": 2,
+  "builds": [
+    {
+      "src": "royalcrest/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "50mb" }
     }
-  },
+  ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "api/index.py"
+      "dest": "royalcrest/wsgi.py"
     }
-  ]
+  ],
+  "env": {
+    "DJANGO_SECRET_KEY": "@django_secret_key",
+    "DEBUG": "False",
+    "DB_NAME": "@db_name",
+    "DB_USER": "@db_user",
+    "DB_PASSWORD": "@db_password",
+    "DB_HOST": "@db_host",
+    "DB_PORT": "@db_port",
+    "CLOUDINARY_CLOUD_NAME": "@cloud_name",
+    "CLOUDINARY_API_KEY": "@cloud_api_key",
+    "CLOUDINARY_API_SECRET": "@cloud_api_secret"
+  }
 }
