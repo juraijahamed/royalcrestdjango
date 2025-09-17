@@ -166,7 +166,15 @@ logging.basicConfig(
 
 # Cloudinary Storage Configuration
 # CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
-CLOUDINARY_URL = "cloudinary://153273315114748:TIIJe9aMiTW8jJa6o-FVYsYP6H8@de4vpnkpf"
+CLOUDINARY_URL = "cloudinary://978115355669742:QRSvmyVkGZbFa0NOrHKmTSZzDnc@de4vpnkpf"
+
+
+# Cloudinary Configuration
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'de4vpnkpf',
+    'API_KEY': '978115355669742',
+    'API_SECRET': 'QRSvmyVkGZbFa0NOrHKmTSZzDnc',
+}
 
 if not CLOUDINARY_URL:
     raise ValueError("CLOUDINARY_URL environment variable is missing")
