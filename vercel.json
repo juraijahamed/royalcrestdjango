@@ -14,14 +14,15 @@
     }
   ],
   "env": {
+    "DJANGO_SECRET_KEY": "vqhh7paQf99-mb5pUylsER6ylVNNdRs3aCB3Ddaf9OF-M-8_u1TwrLjZ4b8fhaRPhs0",
     "DEBUG": "False",
-    "DB_NAME": "@db_name",
-    "DB_USER": "@db_user",
-    "DB_PASSWORD": "@db_password",
-    "DB_HOST": "@db_host",
-    "DB_PORT": "@db_port",
-    "CLOUDINARY_CLOUD_NAME": "@cloud_name",
-    "CLOUDINARY_API_KEY": "@cloud_api_key",
-    "CLOUDINARY_API_SECRET": "@cloud_api_secret"
+    "DB_NAME": "neondb",
+    "DB_USER": "neondb_owner",
+    "DB_PASSWORD": "npg_UAFQh6vf0dqW",
+    "DB_HOST": "ep-orange-shape-a188dcmu-pooler.ap-southeast-1.aws.neon.tech",
+    "DB_PORT": "5432",
+    "CLOUDINARY_CLOUD_NAME": "de4vpnkpf",
+    "CLOUDINARY_API_KEY": "978115355669742",
+    "CLOUDINARY_API_SECRET": "QRSvmyVkGZbFa0NOrHKmTSZzDnc"
   }
 }
