@@ -12,21 +12,18 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-# from dotenv import load_dotenv
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import logging
-# import dj_database_url
+import dj_database_url
 
 
-# from dotenv import load_dotenv
 
 # Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Load environment variables
-# load_dotenv(os.path.join(BASE_DIR, ".env"))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -36,8 +33,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7tek(7@wbh8yd&0)$b04xs(npy=a#3+v3jxea=vn!m$lyji3zf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = ['.vercel.app', 'royalcrestdjango.vercel.app', 'www.royalcrestindia.in', 'royalcrestindia.in', 'localhost', '127.0.0.1', '*']
+DEBUG = False
+ALLOWED_HOSTS = ['*','.vercel.app','www.royalcrestindia.in','royalcrestindia.in']
+
   
 
 # Application definition
@@ -54,6 +52,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'cloudinary_storage',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -91,8 +90,6 @@ WSGI_APPLICATION = 'royalcrest.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-import os
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -105,8 +102,6 @@ DATABASES = {
 }
 
 
-
-MEDIA_URL = '/media/' 
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -165,23 +160,26 @@ logging.basicConfig(
 
 
 # Cloudinary Storage Configuration
-# CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
-CLOUDINARY_URL = "cloudinary://978115355669742:QRSvmyVkGZbFa0NOrHKmTSZzDnc@de4vpnkpf"
 
-
-# Cloudinary Configuration
+# Cloudinary configuration using environment variables
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'de4vpnkpf',
-    'API_KEY': '978115355669742',
-    'API_SECRET': 'QRSvmyVkGZbFa0NOrHKmTSZzDnc',
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME', 'de4vpnkpf'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY', '978115355669742'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET', 'QRSvmyVkGZbFa0NOrHKmTSZzDnc'),
 }
-
-if not CLOUDINARY_URL:
-    raise ValueError("CLOUDINARY_URL environment variable is missing")
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+
 cloudinary.config(
-    cloudinary_url=CLOUDINARY_URL,
+    cloud_name=CLOUDINARY_STORAGE['CLOUD_NAME'],
+    api_key=CLOUDINARY_STORAGE['API_KEY'],
+    api_secret=CLOUDINARY_STORAGE['API_SECRET'],
     secure=True
 )
+
+# Do NOT define MEDIA_ROOT when using Cloudinary
+MEDIA_URL = '/media/'
+
+print("LOADED SETTINGS FILE:", __file__)
+print("DEFAULT_FILE_STORAGE set to:", 'cloudinary_storage.storage.MediaCloudinaryStorage')
