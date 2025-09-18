@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+# from dotenv import load_dotenv
 
 # BASE DIRECTORY
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -8,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # DJANGO SECRET KEY
 # ==============================================================
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "unsafe-default-key")
-
+# load_dotenv()
 # ==============================================================
 # DEBUG
 # ==============================================================
@@ -55,6 +56,8 @@ MIDDLEWARE = [
     # WhiteNoise for static files
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+ROOT_URLCONF = 'royalcrest.urls'
 
 # ==============================================================
 # TEMPLATES
@@ -127,10 +130,10 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # ==============================================================
 
 # Get AWS credentials from environment variables
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME", "royalcrest-django-media")
-AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME", "us-east-1")
+AWS_ACCESS_KEY_ID = "AKIAYHASRCOANVVSM3G4"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "royalcrest-media"
+AWS_S3_REGION_NAME = "ap-southeast-2"
 
 # Custom domain for S3 bucket
 AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
