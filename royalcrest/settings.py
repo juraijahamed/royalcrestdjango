@@ -142,7 +142,7 @@ AWS_S3_CUSTOM_DOMAIN = f"royalcrest-media.s3.amazonaws.com"
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 
 # Media URL points to S3
-MEDIA_URL = f"https://royalcrest-media.s3.ap-south-1.amazonaws.com/media/"
+MEDIA_URL = f"https://royalcrest-media.s3.ap-southeast-2.amazonaws.com/media/"
 
 # Optional: Prevent overwriting files with same name
 AWS_S3_FILE_OVERWRITE = False
