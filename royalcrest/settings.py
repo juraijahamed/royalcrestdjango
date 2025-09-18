@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 # BASE DIRECTORY
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # DJANGO SECRET KEY
 # ==============================================================
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "unsafe-default-key")
-# load_dotenv()
+load_dotenv()
 # ==============================================================
 # DEBUG
 # ==============================================================
@@ -130,19 +130,19 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # ==============================================================
 
 # Get AWS credentials from environment variables
-AWS_ACCESS_KEY_ID = "AKIAYHASRCOANVVSM3G4"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = "royalcrest-media"
-AWS_S3_REGION_NAME = "ap-southeast-2"
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME", "royalcrest-media")
+AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME", "ap-southeast-2")
 
 # Custom domain for S3 bucket
-AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+AWS_S3_CUSTOM_DOMAIN = f"royalcrest-media.s3.amazonaws.com"
 
 # Use S3 for media storage
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 
 # Media URL points to S3
-MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
+MEDIA_URL = f"https://royalcrest-media.s3.ap-south-1.amazonaws.com/media/"
 
 # Optional: Prevent overwriting files with same name
 AWS_S3_FILE_OVERWRITE = False
