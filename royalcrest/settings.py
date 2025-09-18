@@ -5,11 +5,13 @@ from pathlib import Path
 # BASE DIRECTORY
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# load_dotenv()
+
+
 # ==============================================================
 # DJANGO SECRET KEY
 # ==============================================================
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "unsafe-default-key")
-# load_dotenv()
 # ==============================================================
 # DEBUG
 # ==============================================================

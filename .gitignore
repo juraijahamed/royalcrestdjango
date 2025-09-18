@@ -8,3 +8,4 @@ media/
 .env*.local
 procfileroyalcrest-backup/
 royalcrest-backup/
+.venv/
